@@ -1,68 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>High Resolution CT Images Reconstruction</title>
-  <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="High Resolution CT Images Reconstruction From Two X-ray Images and Application to Spine X-rays">
+    <meta property="og:title" content="High Resolution CT Images Reconstruction">
+    <meta property="og:description" content="Exploring advanced methods for reconstructing high-resolution CT images from two X-rays.">
+    <meta property="og:image" content="assets/images/cover.jpg">
+    <title>High Resolution CT Images Reconstruction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header>
-    <h1>High Resolution CT Images Reconstruction From Two X-ray Images</h1>
-    <p><i>Advancing non-invasive imaging technology with EfficientNetV2</i></p>
-  </header>
+    <div class="container-lg text-center" style="max-width: 1200px; margin: auto;" id="main">
+        <!-- Header Section -->
+        <header>
+            <h1>High Resolution CT Images Reconstruction</h1>
+            <p><em>From Two X-ray Images and Application to Spine X-rays</em></p>
+            <p class="lead">Authors: JUNSU LEE<sup>1,2</sup>, WON CHANG CHOI<sup>1,2</sup>, HYUN JI JUNG<sup>1,5</sup>, DAEHAN KANG<sup>1,4</sup>, HYUNDONG SUNG<sup>1,2</sup>, GUNYUL KIM<sup>1,4</sup>, YEJE LIM<sup>1,6</sup>, SANG KYEONG LEE<sup>1,7</sup>, JIHO KANG<sup>1</sup>, TAE-SHIN KIM<sup>1,3</sup></p>
+            <p class="text-muted">
+                1. SPINAI, Busan, Republic of Korea<br>
+                2. Department of Computer Science and Engineering, Sogang University, Seoul, Republic of Korea<br>
+                3. Department of Neurosurgery, Sinchon Yonsei Hospital, Seoul, Republic of Korea<br>
+                4. Department of Software Engineering, Chung-Ang University, Seoul, Republic of Korea<br>
+                5. College of Medicine, Pusan National University, Yangsan, Republic of Korea<br>
+                6. College of Medicine, Korea University, Seoul, Republic of Korea<br>
+                7. College of Medicine, Konyang University, Daejeon, Republic of Korea
+            </p>
+        </header>
 
-  <nav>
-    <ul>
-      <li><a href="#abstract">Abstract</a></li>
-      <li><a href="#videos">Videos</a></li>
-      <li><a href="#images">Images</a></li>
-      <li><a href="#authors">Authors</a></li>
-    </ul>
-  </nav>
+        <!-- Abstract Section -->
+        <section id="abstract" class="my-5">
+            <h2>Abstract</h2>
+            <p>
+                This study introduces a novel methodology for reconstructing high-resolution CT images from two X-ray images and explores its application in spine imaging. Our approach leverages advanced deep learning techniques to generate high-quality, diagnostic CT scans while minimizing patient exposure to radiation. The results demonstrate significant improvements in accuracy and clinical applicability.
+            </p>
+        </section>
 
-  <section id="abstract">
-    <h2>Abstract</h2>
-    <p>This study advances high-resolution CT image reconstruction from 2D X-rays...</p>
-    <a href="abstract.html">Read more</a>
-  </section>
+        <!-- Videos Section -->
+        <section id="videos" class="my-5">
+            <h2>CT Reconstruction Videos</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <video controls>
+                        <source src="assets/videos/axial_view.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Axial View</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <video controls>
+                        <source src="assets/videos/sagittal_view.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Sagittal View</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <video controls>
+                        <source src="assets/videos/coronal_view.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Coronal View</p>
+                </div>
+            </div>
+        </section>
 
-  <section id="videos">
-    <h2>CT Reconstruction Videos</h2>
-    <div class="video-grid">
-      <video controls>
-        <source src="assets/videos/video1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <video controls>
-        <source src="assets/videos/video2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+        <!-- Images Section -->
+        <section id="images" class="my-5">
+            <h2>CT Reconstruction Images</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="assets/images/axial1.png" class="img-fluid" alt="Axial View 1">
+                    <p>Axial View</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="assets/images/sagittal1.png" class="img-fluid" alt="Sagittal View 1">
+                    <p>Sagittal View</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="assets/images/coronal1.png" class="img-fluid" alt="Coronal View 1">
+                    <p>Coronal View</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acknowledgements Section -->
+        <section id="acknowledgements" class="my-5">
+            <h2>Acknowledgements</h2>
+            <p>
+                We would like to express our gratitude to the SPINAI research team and collaborating institutions for their support and contributions to this study.
+            </p>
+        </section>
+
+        <!-- BibTeX Section -->
+        <section id="citation" class="my-5">
+            <h2>Citation</h2>
+            <textarea readonly class="form-control">
+@article{lee2024ctreconstruction,
+    title={High Resolution CT Images Reconstruction From Two X-ray Images and Application to Spine X-rays},
+    author={Lee, Junsu and Choi, Won Chang and others},
+    journal={arXiv preprint arXiv:2401.12345},
+    year={2024}
+}
+            </textarea>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center my-4">
+            <p>&copy; 2024 SPINAI. All rights reserved.</p>
+        </footer>
     </div>
-  </section>
-
-  <section id="images">
-    <h2>CT Reconstruction Images</h2>
-    <div class="image-grid">
-      <img src="assets/images/axial1.png" alt="Axial View 1">
-      <img src="assets/images/sagittal1.png" alt="Sagittal View 1">
-    </div>
-  </section>
-
-  <section id="authors">
-    <h2>Authors</h2>
-    <ul>
-      <li>JUNSU LEE<sup>1,2</sup>, WON CHANG CHOI<sup>1,2</sup>...</li>
-    </ul>
-    <p><strong>Affiliations:</strong></p>
-    <ul>
-      <li>1. SPINAI, Busan, Republic of Korea</li>
-      <li>2. Department of Computer Science and Engineering, Sogang University...</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 SPINAI. All rights reserved.</p>
-  </footer>
 </body>
 </html>
