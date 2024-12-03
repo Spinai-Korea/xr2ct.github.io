@@ -16,43 +16,39 @@ body {
 
 /* Header */
 header {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #ffffff, #e3f2fd);
     color: #2c5282;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 3em;
+    margin-bottom: 15px;
     color: #2c5282;
 }
 
 header .subtitle {
-    font-size: 1.3em;
+    font-size: 1.5em;
     color: #4a5568;
 }
 
 header .authors {
-    font-size: 0.9em;
-}
-
-header .author-list {
-    margin-bottom: 10px;
+    font-size: 1em;
 }
 
 header .affiliations {
-    font-size: 0.8em;
-    line-height: 1.5;
+    font-size: 0.85em;
+    line-height: 1.6;
 }
 
 /* Section Titles */
 section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    margin-bottom: 25px;
     color: #2b6cb0;
     text-align: center;
 }
@@ -62,8 +58,8 @@ section h2 {
 #videos video,
 #images img {
     max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -71,7 +67,7 @@ section h2 {
 #videos video:hover,
 #images img:hover {
     transform: scale(1.02);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
 }
 
 .video-container p,
@@ -85,17 +81,17 @@ section h2 {
 /* Abstract Section */
 #abstract {
     background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 /* Acknowledgements Section */
 #acknowledgements {
     background: #e3fcec;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     color: #155724;
     text-align: center;
 }
@@ -106,12 +102,12 @@ section h2 {
     font-family: "Courier New", Courier, monospace;
     background: #f8f9fa;
     border: 1px solid #dee2e6;
-    border-radius: 4px;
-    padding: 15px;
-    font-size: 0.9em;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 1em;
     resize: none;
-    height: 200px;
-    margin-top: 10px;
+    height: 220px;
+    margin-top: 15px;
     color: #495057;
 }
 
@@ -120,55 +116,55 @@ footer {
     background: #ffffff;
     color: #6c757d;
     text-align: center;
-    padding: 15px 0;
-    border-radius: 8px;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 footer p {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     header .subtitle {
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
 
     header .authors {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     section h2 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 }
 
 /* Additional Styles Inspired by CAT4D */
 .video-container h2 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .video-container video {
-    width: 80%;
-    max-width: 800px;
+    width: 85%;
+    max-width: 900px;
 }
 
 #rep-video {
     background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 #rep-video h2 {
     color: #2b6cb0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 #rep-video p {
@@ -180,8 +176,8 @@ a.external-link {
     text-decoration: none;
     color: #ffffff;
     background-color: #2b6cb0;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 6px;
     transition: background-color 0.3s ease;
 }
 
@@ -191,8 +187,8 @@ a.external-link:hover {
 
 /* Textarea Styling */
 textarea.form-control {
-    font-size: 0.9em;
-    height: 200px;
+    font-size: 1em;
+    height: 220px;
 }
 
 /* Adjust Video Controls */
