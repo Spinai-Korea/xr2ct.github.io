@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,75 +12,84 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
-    <div class="container-lg text-center" style="max-width: 1200px; margin: auto;" id="main">
+    <div class="container-lg" id="main">
         <!-- Header Section -->
-        <header>
+        <header class="text-center my-5">
             <h1>High Resolution CT Images Reconstruction</h1>
-            <p><em>From Two X-ray Images and Application to Spine X-rays</em></p>
-            <p class="lead">Authors: JUNSU LEE<sup>1,2</sup>, WON CHANG CHOI<sup>1,2</sup>, HYUN JI JUNG<sup>1,5</sup>, DAEHAN KANG<sup>1,4</sup>, HYUNDONG SUNG<sup>1,2</sup>, GUNYUL KIM<sup>1,4</sup>, YEJE LIM<sup>1,6</sup>, SANG KYEONG LEE<sup>1,7</sup>, JIHO KANG<sup>1</sup>, TAE-SHIN KIM<sup>1,3</sup></p>
-            <p class="text-muted">
-                1. SPINAI, Busan, Republic of Korea<br>
-                2. Department of Computer Science and Engineering, Sogang University, Seoul, Republic of Korea<br>
-                3. Department of Neurosurgery, Sinchon Yonsei Hospital, Seoul, Republic of Korea<br>
-                4. Department of Software Engineering, Chung-Ang University, Seoul, Republic of Korea<br>
-                5. College of Medicine, Pusan National University, Yangsan, Republic of Korea<br>
-                6. College of Medicine, Korea University, Seoul, Republic of Korea<br>
-                7. College of Medicine, Konyang University, Daejeon, Republic of Korea
-            </p>
+            <p class="subtitle"><em>From Two X-ray Images and Application to Spine X-rays</em></p>
+            <div class="authors my-3">
+                <p class="author-list">
+                    JUNSU LEE<sup>1,2</sup>, WON CHANG CHOI<sup>1,2</sup>, HYUN JI JUNG<sup>1,5</sup>, DAEHAN KANG<sup>1,4</sup>, HYUNDONG SUNG<sup>1,2</sup>, GUNYUL KIM<sup>1,4</sup>, YEJE LIM<sup>1,6</sup>, SANG KYEONG LEE<sup>1,7</sup>, JIHO KANG<sup>1</sup>, TAE-SHIN KIM<sup>1,3</sup>
+                </p>
+                <p class="affiliations text-muted">
+                    <small>
+                        1. SPINAI, Busan, Republic of Korea<br>
+                        2. Department of Computer Science and Engineering, Sogang University, Seoul, Republic of Korea<br>
+                        3. Department of Neurosurgery, Sinchon Yonsei Hospital, Seoul, Republic of Korea<br>
+                        4. Department of Software Engineering, Chung-Ang University, Seoul, Republic of Korea<br>
+                        5. College of Medicine, Pusan National University, Yangsan, Republic of Korea<br>
+                        6. College of Medicine, Korea University, Seoul, Republic of Korea<br>
+                        7. College of Medicine, Konyang University, Daejeon, Republic of Korea
+                    </small>
+                </p>
+            </div>
         </header>
+
+        <!-- Representative CT Reconstruction Video -->
+        <section id="rep-video" class="my-5">
+            <div class="video-container text-center">
+                <h2>CT Reconstruction Video</h2>
+                <video controls class="rounded shadow">
+                    <source src="assets/videos/axial_view.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="mt-2">Axial View Reconstruction</p>
+            </div>
+        </section>
 
         <!-- Abstract Section -->
         <section id="abstract" class="my-5">
             <h2>Abstract</h2>
             <p>
-                This study introduces a novel methodology for reconstructing high-resolution CT images from two X-ray images and explores its application in spine imaging. Our approach leverages advanced deep learning techniques to generate high-quality, diagnostic CT scans while minimizing patient exposure to radiation. The results demonstrate significant improvements in accuracy and clinical applicability.
+                This study advances high-resolution CT image reconstruction from 2D X-rays, focusing on reducing radiation exposure and enhancing diagnostic precision. By addressing key shortcomings—such as projection distortions, low resolution, inefficiencies, and long training times—we significantly improved the PerX2CT algorithm. Our approach uses higher image resolution, optimized preprocessing, and EfficientNetV2 integration to overcome challenges faced by previous models like X2CT-GAN, pushing the limits of non-invasive imaging technology.
+                To overcome previous deficiencies, we implemented several key innovations. We doubled the resolution of input X-rays from 128x128 to 256x256 pixels, greatly enhancing CT image quality. Preprocessing was optimized by excluding padded regions to ensure only relevant data is used. We also employed advanced style transfer techniques to harmonize general X-rays with synthetic ones, improving output consistency. The most substantial improvement involved replacing the outdated ResNet-101 encoder with EfficientNetV2, selected for its superior accuracy and efficiency, especially with larger datasets. Further optimization was achieved through stage-freezing during transfer learning, focusing on the extraction of local feature maps.
+                The XR2CT model achieved a resolution of 256x256 pixels, delivering twice the detail of previous versions. The integration of EfficientNetV2 resulted in faster training and inference times while maintaining high diagnostic accuracy. Our padding detection method effectively eliminated irrelevant data, allowing computational resources to concentrate on meaningful regions. Notably, we reduced the number of parameters by approximately 100-fold. These innovations enabled more accurate, higher-resolution CT reconstructions with a significantly reduced computational load.
+                The advancements presented in this study mark a substantial leap in CT reconstruction technology. By integrating EfficientNetV2 and refining our preprocessing techniques, we developed a model that enhances image quality and efficiency while significantly reducing radiation exposure. Our findings suggest that this approach could achieve super-resolution CT reconstructions up to 1024x1024 pixels, providing clinicians with ultra-high-definition diagnostic images of unparalleled detail and precision.
             </p>
         </section>
 
-        <!-- Videos Section -->
+        <!-- Reconstruction Videos Section -->
         <section id="videos" class="my-5">
             <h2>CT Reconstruction Videos</h2>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
-                    <video controls>
+                    <video controls class="img-fluid rounded shadow">
                         <source src="assets/videos/axial_view.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <p>Axial View</p>
+                    <p class="mt-2">Axial View</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <video controls>
-                        <source src="assets/videos/sagittal_view.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Sagittal View</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <video controls>
-                        <source src="assets/videos/coronal_view.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Coronal View</p>
-                </div>
+                <!-- Add more videos here if needed -->
             </div>
         </section>
 
-        <!-- Images Section -->
+        <!-- Reconstruction Images Section -->
         <section id="images" class="my-5">
             <h2>CT Reconstruction Images</h2>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-4">
-                    <img src="assets/images/axial1.png" class="img-fluid" alt="Axial View 1">
-                    <p>Axial View</p>
+                    <img src="assets/images/axial1.png" class="img-fluid rounded shadow" alt="Axial View 1">
+                    <p class="mt-2">Axial View</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="assets/images/sagittal1.png" class="img-fluid" alt="Sagittal View 1">
-                    <p>Sagittal View</p>
+                    <img src="assets/images/sagittal1.png" class="img-fluid rounded shadow" alt="Sagittal View 1">
+                    <p class="mt-2">Sagittal View</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="assets/images/coronal1.png" class="img-fluid" alt="Coronal View 1">
-                    <p>Coronal View</p>
+                    <img src="assets/images/coronal1.png" class="img-fluid rounded shadow" alt="Coronal View 1">
+                    <p class="mt-2">Coronal View</p>
                 </div>
             </div>
         </section>
@@ -110,5 +120,9 @@
             <p>&copy; 2024 SPINAI. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
