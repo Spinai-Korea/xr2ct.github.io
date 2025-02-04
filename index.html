@@ -1,498 +1,262 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="High Resolution CT Images Reconstruction From Two X-ray Images and Application to Spine X-rays">
-    <meta property="og:title" content="High Resolution CT Images Reconstruction">
-    <meta property="og:description" content="Exploring advanced methods for reconstructing high-resolution CT images from two X-rays.">
-    <meta property="og:image" content="assets/images/cover.jpg">
-    <title>High Resolution CT Images Reconstruction</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="High Resolution CT Images Reconstruction From Two X-ray Images and Application to Spine X-rays">
+  <meta property="og:title" content="High Resolution CT Images Reconstruction">
+  <meta property="og:description" content="Exploring advanced methods for reconstructing high-resolution CT images from two X-rays.">
+  <meta property="og:image" content="assets/images/cover.jpg">
+  <title>High Resolution CT Images Reconstruction</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-    <div class="container-lg" id="main">
-        <!-- Header Section -->
-        <header class="text-center my-5">
-            <h1 class="display-4">High Resolution CT Images Reconstruction</h1>
-            <p class="subtitle"><em>From Two X-ray Images and Application to Spine X-rays</em></p>
-            <div class="authors my-3">
-                <p class="author-list">
-                    JUNSU LEE<sup>1,2</sup>, WON CHANG CHOI<sup>1,2</sup>, HYUN JI JUNG<sup>1,5</sup>, DAEHAN KANG<sup>1,4</sup>, HYUNDONG SUNG<sup>1,2</sup>, GUNYUL KIM<sup>1,4</sup>, YEJE LIM<sup>1,6</sup>, SANG KYEONG LEE<sup>1,7</sup>, JIHO KANG<sup>1</sup>, TAE-SHIN KIM<sup>1,3</sup>
-                </p>
-                <p class="affiliations text-muted">
-                    <small>
-                        1. SPINAI, Busan, Republic of Korea (<a href="http://xr2ct.com" target="_blank">XR2CT Site</a>)<br>
-                        2. Department of Computer Science and Engineering, Sogang University, Seoul, Republic of Korea<br>
-                        3. Department of Neurosurgery, Sinchon Yonsei Hospital, Seoul, Republic of Korea<br>
-                        4. Department of Software Engineering, Chung-Ang University, Seoul, Republic of Korea<br>
-                        5. College of Medicine, Pusan National University, Yangsan, Republic of Korea<br>
-                        6. College of Medicine, Korea University, Seoul, Republic of Korea<br>
-                        7. College of Medicine, Konyang University, Daejeon, Republic of Korea
-                    </small>
-                </p>
+  <div class="container-lg" id="main">
+    <!-- Header Section -->
+    <header class="text-center my-5">
+      <h1 class="display-4">High Resolution CT Images Reconstruction</h1>
+      <p class="subtitle"><em>From Two X-ray Images and Application to Spine X-rays</em></p>
+      <div class="authors my-3">
+        <p class="author-list">
+          JUNSU LEE<sup>1,2</sup>, WON CHANG CHOI<sup>1,2</sup>, HYUN JI JUNG<sup>1,5</sup>, DAEHAN KANG<sup>1,4</sup>, HYUNDONG SUNG<sup>1,2</sup>, GUNYUL KIM<sup>1,4</sup>, YEJE LIM<sup>1,6</sup>, SANG KYEONG LEE<sup>1,7</sup>, JIHO KANG<sup>1</sup>, TAE-SHIN KIM<sup>1,3</sup>
+        </p>
+        <p class="affiliations text-muted">
+          <small>
+            1. SPINAI, Busan, Republic of Korea (<a href="http://xr2ct.com" target="_blank">XR2CT Site</a>)<br>
+            2. Department of Computer Science and Engineering, Sogang University, Seoul, Republic of Korea<br>
+            3. Department of Neurosurgery, Sinchon Yonsei Hospital, Seoul, Republic of Korea<br>
+            4. Department of Software Engineering, Chung-Ang University, Seoul, Republic of Korea<br>
+            5. College of Medicine, Pusan National University, Yangsan, Republic of Korea<br>
+            6. College of Medicine, Korea University, Seoul, Republic of Korea<br>
+            7. College of Medicine, Konyang University, Daejeon, Republic of Korea
+          </small>
+        </p>
+      </div>
+    </header>
+
+    <!-- Representative CT Reconstruction Video -->
+    <section id="rep-video" class="my-5">
+      <div class="video-container text-center">
+        <h2>CT Reconstruction Video</h2>
+        <video controls class="rounded shadow">
+          <source src="assets/videos/axial_view.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="mt-2">Axial View Reconstruction</p>
+      </div>
+    </section>
+
+    <!-- Revised CT Reconstruction Media Section -->
+    <section id="videos" class="my-5">
+      <h2>CT Reconstruction Media</h2>
+
+      <!-- Case 1 -->
+      <h3 class="mb-3">Case 1</h3>
+      <!-- Row for PA and LAT X-ray Images -->
+      <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="assets/images/case1_pa_xray.jpg" class="card-img-top" alt="Case 1: PA Xray">
+            <div class="card-body">
+              <p class="card-text text-center">Case 1: PA Xray</p>
             </div>
-        </header>
-
-        <!-- Representative CT Reconstruction Video -->
-        <section id="rep-video" class="my-5">
-            <div class="video-container text-center">
-                <h2>CT Reconstruction Video</h2>
-                <video controls class="rounded shadow">
-                    <source src="assets/videos/axial_view.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p class="mt-2">Axial View Reconstruction</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="assets/images/case1_lat_xray.jpg" class="card-img-top" alt="Case 1: LAT Xray">
+            <div class="card-body">
+              <p class="card-text text-center">Case 1: LAT Xray</p>
             </div>
-        </section>
-
-        <!-- Abstract Section -->
-        <section id="abstract" class="my-5">
-            <h2>Abstract</h2>
-            <p>
-                Accurate and radiation-efficient imaging is essential for neurosurgical interventions involving the spine. This study presents XR2CT, a deep learning framework that reconstructs high-resolution three-dimensional (3D) computed tomography (CT) images from limited two-dimensional (2D) X-ray inputs. A dataset of 1,159 normal and post-operative spine CT scans was used to generate orthogonal synthetic X-ray pairs at 256×256 resolution. XR2CT introduces four key advancements over existing 2D-to-3D reconstruction approaches: (1) increasing output resolution to 256×256, (2) excluding non-informative padded regions using spatial metadata, (3) applying style transfer to harmonize clinical X-rays with standardized synthetic data, and (4) leveraging EfficientNetV2 for computationally efficient and accurate feature extraction. The model is trained with L1 and perceptual losses to preserve both global structures and fine anatomical details. Reconstruction fidelity is evaluated using peak signal-to-noise ratio, structural similarity index, and learned perceptual image patch similarity metrics. Compared to ResNet-101–based models, XR2CT achieves up to 2.8-fold faster training while maintaining superior reconstruction quality, accurately capturing spinal anatomy and hardware positioning. Style transfer mitigates domain discrepancies, enhancing robustness across diverse clinical X-rays. By recovering essential spinal structures from two X-ray views, XR2CT offers a high-resolution reconstruction pipeline that reduces radiation exposure without compromising diagnostic utility. These findings support future advancements in super-resolution reconstruction for refined neurosurgical applications.
-            </p>
-        </section>
-
-        <!-- Reconstruction Videos Section -->
-        <section id="videos" class="my-5">
-            <h2>CT Reconstruction Videos</h2>
-
-            <!-- Case 1 -->
-            <h3 class="mb-3">Case 1</h3>
-            <div class="row row-cols-1 row-cols-md-5 g-4 mb-5">
-                <!-- PA Xray -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/case1_pa_xray.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 1: PA Xray</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- LAT Xray -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/case1_lat_xray.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 1: LAT Xray</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Axial View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/axial_view1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 1: Axial View</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Coronal View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/coronal_view1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 1: Coronal View</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sagittal View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/sagittal_view1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 1: Sagittal View</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row for Videos -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/axial_view1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 1: Axial View</p>
             </div>
-
-            <!-- Case 2 -->
-            <h3 class="mb-3">Case 2</h3>
-            <div class="row row-cols-1 row-cols-md-5 g-4 mb-5">
-                <!-- PA Xray -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/case2_pa_xray.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 2: PA Xray</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- LAT Xray -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/case2_lat_xray.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 2: LAT Xray</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Axial View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/axial_view2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 2: Axial View</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Coronal View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/coronal_view2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 2: Coronal View</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sagittal View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/sagittal_view2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 2: Sagittal View</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/coronal_view1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 1: Coronal View</p>
             </div>
-
-            <!-- Case 3 -->
-            <h3 class="mb-3">Case 3</h3>
-            <div class="row row-cols-1 row-cols-md-5 g-4 mb-5">
-                <!-- PA Xray -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/case3_pa_xray.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 3: PA Xray</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- LAT Xray -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/case3_lat_xray.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 3: LAT Xray</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Axial View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/axial_view3.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 3: Axial View</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Coronal View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/coronal_view3.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 3: Coronal View</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sagittal View -->
-                <div class="col">
-                    <div class="card h-100">
-                        <video controls class="card-img-top">
-                            <source src="assets/videos/sagittal_view3.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="card-body">
-                            <p class="card-text">Case 3: Sagittal View</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/sagittal_view1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 1: Sagittal View</p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
 
-        <!-- Reconstruction Images Section -->
-        <section id="images" class="my-5">
-            <h2>CT Reconstruction Images</h2>
-            <div class="accordion" id="imagesAccordion">
-                <!-- Case 1 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingCase1">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCase1" aria-expanded="false" aria-controls="collapseCase1">
-                            Case 1
-                        </button>
-                    </h2>
-                    <div id="collapseCase1" class="accordion-collapse collapse" aria-labelledby="headingCase1" data-bs-parent="#imagesAccordion">
-                        <div class="accordion-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Model</th>
-                                            <th>Axial</th>
-                                            <th>Coronal</th>
-                                            <th>Sagittal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>perx2ct (GT)</th>
-                                            <td><img src="assets/images/case1_perx2ct_gt_axial.png" class="img-fluid rounded shadow" alt="Case1 perx2ct GT Axial"></td>
-                                            <td><img src="assets/images/case1_perx2ct_gt_coronal.png" class="img-fluid rounded shadow" alt="Case1 perx2ct GT Coronal"></td>
-                                            <td><img src="assets/images/case1_perx2ct_gt_sagittal.png" class="img-fluid rounded shadow" alt="Case1 perx2ct GT Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>perx2ct (128x128)</th>
-                                            <td><img src="assets/images/case1_perx2ct_128_axial.png" class="img-fluid rounded shadow" alt="Case1 perx2ct 128 Axial"></td>
-                                            <td><img src="assets/images/case1_perx2ct_128_coronal.png" class="img-fluid rounded shadow" alt="Case1 perx2ct 128 Coronal"></td>
-                                            <td><img src="assets/images/case1_perx2ct_128_sagittal.png" class="img-fluid rounded shadow" alt="Case1 perx2ct 128 Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Ground Truth (256x256)</th>
-                                            <td><img src="assets/images/case1_gt_256_axial.png" class="img-fluid rounded shadow" alt="Case1 GT 256 Axial"></td>
-                                            <td><img src="assets/images/case1_gt_256_coronal.png" class="img-fluid rounded shadow" alt="Case1 GT 256 Coronal"></td>
-                                            <td><img src="assets/images/case1_gt_256_sagittal.png" class="img-fluid rounded shadow" alt="Case1 GT 256 Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>XR2CT (256x256)</th>
-                                            <td><img src="assets/images/case1_xr2ct_256_axial.png" class="img-fluid rounded shadow" alt="Case1 XR2CT 256 Axial"></td>
-                                            <td><img src="assets/images/case1_xr2ct_256_coronal.png" class="img-fluid rounded shadow" alt="Case1 XR2CT 256 Coronal"></td>
-                                            <td><img src="assets/images/case1_xr2ct_256_sagittal.png" class="img-fluid rounded shadow" alt="Case1 XR2CT 256 Sagittal"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case 2 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingCase2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCase2" aria-expanded="false" aria-controls="collapseCase2">
-                            Case 2
-                        </button>
-                    </h2>
-                    <div id="collapseCase2" class="accordion-collapse collapse" aria-labelledby="headingCase2" data-bs-parent="#imagesAccordion">
-                        <div class="accordion-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Model</th>
-                                            <th>Axial</th>
-                                            <th>Coronal</th>
-                                            <th>Sagittal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>perx2ct (GT)</th>
-                                            <td><img src="assets/images/case2_perx2ct_gt_axial.png" class="img-fluid rounded shadow" alt="Case2 perx2ct GT Axial"></td>
-                                            <td><img src="assets/images/case2_perx2ct_gt_coronal.png" class="img-fluid rounded shadow" alt="Case2 perx2ct GT Coronal"></td>
-                                            <td><img src="assets/images/case2_perx2ct_gt_sagittal.png" class="img-fluid rounded shadow" alt="Case2 perx2ct GT Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>perx2ct (128x128)</th>
-                                            <td><img src="assets/images/case2_perx2ct_128_axial.png" class="img-fluid rounded shadow" alt="Case2 perx2ct 128 Axial"></td>
-                                            <td><img src="assets/images/case2_perx2ct_128_coronal.png" class="img-fluid rounded shadow" alt="Case2 perx2ct 128 Coronal"></td>
-                                            <td><img src="assets/images/case2_perx2ct_128_sagittal.png" class="img-fluid rounded shadow" alt="Case2 perx2ct 128 Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Ground Truth (256x256)</th>
-                                            <td><img src="assets/images/case2_gt_256_axial.png" class="img-fluid rounded shadow" alt="Case2 GT 256 Axial"></td>
-                                            <td><img src="assets/images/case2_gt_256_coronal.png" class="img-fluid rounded shadow" alt="Case2 GT 256 Coronal"></td>
-                                            <td><img src="assets/images/case2_gt_256_sagittal.png" class="img-fluid rounded shadow" alt="Case2 GT 256 Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>XR2CT (256x256)</th>
-                                            <td><img src="assets/images/case2_xr2ct_256_axial.png" class="img-fluid rounded shadow" alt="Case2 XR2CT 256 Axial"></td>
-                                            <td><img src="assets/images/case2_xr2ct_256_coronal.png" class="img-fluid rounded shadow" alt="Case2 XR2CT 256 Coronal"></td>
-                                            <td><img src="assets/images/case2_xr2ct_256_sagittal.png" class="img-fluid rounded shadow" alt="Case2 XR2CT 256 Sagittal"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case 3 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingCase3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCase3" aria-expanded="false" aria-controls="collapseCase3">
-                            Case 3
-                        </button>
-                    </h2>
-                    <div id="collapseCase3" class="accordion-collapse collapse" aria-labelledby="headingCase3" data-bs-parent="#imagesAccordion">
-                        <div class="accordion-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Model</th>
-                                            <th>Axial</th>
-                                            <th>Coronal</th>
-                                            <th>Sagittal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>perx2ct (GT)</th>
-                                            <td><img src="assets/images/case3_perx2ct_gt_axial.png" class="img-fluid rounded shadow" alt="Case3 perx2ct GT Axial"></td>
-                                            <td><img src="assets/images/case3_perx2ct_gt_coronal.png" class="img-fluid rounded shadow" alt="Case3 perx2ct GT Coronal"></td>
-                                            <td><img src="assets/images/case3_perx2ct_gt_sagittal.png" class="img-fluid rounded shadow" alt="Case3 perx2ct GT Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>perx2ct (128x128)</th>
-                                            <td><img src="assets/images/case3_perx2ct_128_axial.png" class="img-fluid rounded shadow" alt="Case3 perx2ct 128 Axial"></td>
-                                            <td><img src="assets/images/case3_perx2ct_128_coronal.png" class="img-fluid rounded shadow" alt="Case3 perx2ct 128 Coronal"></td>
-                                            <td><img src="assets/images/case3_perx2ct_128_sagittal.png" class="img-fluid rounded shadow" alt="Case3 perx2ct 128 Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Ground Truth (256x256)</th>
-                                            <td><img src="assets/images/case3_gt_256_axial.png" class="img-fluid rounded shadow" alt="Case3 GT 256 Axial"></td>
-                                            <td><img src="assets/images/case3_gt_256_coronal.png" class="img-fluid rounded shadow" alt="Case3 GT 256 Coronal"></td>
-                                            <td><img src="assets/images/case3_gt_256_sagittal.png" class="img-fluid rounded shadow" alt="Case3 GT 256 Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>XR2CT (256x256)</th>
-                                            <td><img src="assets/images/case3_xr2ct_256_axial.png" class="img-fluid rounded shadow" alt="Case3 XR2CT 256 Axial"></td>
-                                            <td><img src="assets/images/case3_xr2ct_256_coronal.png" class="img-fluid rounded shadow" alt="Case3 XR2CT 256 Coronal"></td>
-                                            <td><img src="assets/images/case3_xr2ct_256_sagittal.png" class="img-fluid rounded shadow" alt="Case3 XR2CT 256 Sagittal"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case 4 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingCase4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCase4" aria-expanded="false" aria-controls="collapseCase4">
-                            Case 4
-                        </button>
-                    </h2>
-                    <div id="collapseCase4" class="accordion-collapse collapse" aria-labelledby="headingCase4" data-bs-parent="#imagesAccordion">
-                        <div class="accordion-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Model</th>
-                                            <th>Axial</th>
-                                            <th>Coronal</th>
-                                            <th>Sagittal</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>perx2ct (GT)</th>
-                                            <td><img src="assets/images/case4_perx2ct_gt_axial.png" class="img-fluid rounded shadow" alt="Case4 perx2ct GT Axial"></td>
-                                            <td><img src="assets/images/case4_perx2ct_gt_coronal.png" class="img-fluid rounded shadow" alt="Case4 perx2ct GT Coronal"></td>
-                                            <td><img src="assets/images/case4_perx2ct_gt_sagittal.png" class="img-fluid rounded shadow" alt="Case4 perx2ct GT Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>perx2ct (128x128)</th>
-                                            <td><img src="assets/images/case4_perx2ct_128_axial.png" class="img-fluid rounded shadow" alt="Case4 perx2ct 128 Axial"></td>
-                                            <td><img src="assets/images/case4_perx2ct_128_coronal.png" class="img-fluid rounded shadow" alt="Case4 perx2ct 128 Coronal"></td>
-                                            <td><img src="assets/images/case4_perx2ct_128_sagittal.png" class="img-fluid rounded shadow" alt="Case4 perx2ct 128 Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Ground Truth (256x256)</th>
-                                            <td><img src="assets/images/case4_gt_256_axial.png" class="img-fluid rounded shadow" alt="Case4 GT 256 Axial"></td>
-                                            <td><img src="assets/images/case4_gt_256_coronal.png" class="img-fluid rounded shadow" alt="Case4 GT 256 Coronal"></td>
-                                            <td><img src="assets/images/case4_gt_256_sagittal.png" class="img-fluid rounded shadow" alt="Case4 GT 256 Sagittal"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>XR2CT (256x256)</th>
-                                            <td><img src="assets/images/case4_xr2ct_256_axial.png" class="img-fluid rounded shadow" alt="Case4 XR2CT 256 Axial"></td>
-                                            <td><img src="assets/images/case4_xr2ct_256_coronal.png" class="img-fluid rounded shadow" alt="Case4 XR2CT 256 Coronal"></td>
-                                            <td><img src="assets/images/case4_xr2ct_256_sagittal.png" class="img-fluid rounded shadow" alt="Case4 XR2CT 256 Sagittal"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Case 2 -->
+      <h3 class="mb-3">Case 2</h3>
+      <!-- Row for PA and LAT X-ray Images -->
+      <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="assets/images/case2_pa_xray.jpg" class="card-img-top" alt="Case 2: PA Xray">
+            <div class="card-body">
+              <p class="card-text text-center">Case 2: PA Xray</p>
             </div>
-        </section>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="assets/images/case2_lat_xray.jpg" class="card-img-top" alt="Case 2: LAT Xray">
+            <div class="card-body">
+              <p class="card-text text-center">Case 2: LAT Xray</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row for Videos -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/axial_view2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 2: Axial View</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/coronal_view2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 2: Coronal View</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/sagittal_view2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 2: Sagittal View</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Acknowledgements Section -->
-        <section id="acknowledgements" class="my-5">
-            <h2>Acknowledgements</h2>
-            <p>
-                우리는 이 연구에 대한 지원과 기여를 해준 SPINAI 연구팀과 협력 기관들에 감사의 뜻을 전하고자 합니다.
-            </p>
-        </section>
+      <!-- Case 3 -->
+      <h3 class="mb-3">Case 3</h3>
+      <!-- Row for PA and LAT X-ray Images -->
+      <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="assets/images/case3_pa_xray.jpg" class="card-img-top" alt="Case 3: PA Xray">
+            <div class="card-body">
+              <p class="card-text text-center">Case 3: PA Xray</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="assets/images/case3_lat_xray.jpg" class="card-img-top" alt="Case 3: LAT Xray">
+            <div class="card-body">
+              <p class="card-text text-center">Case 3: LAT Xray</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row for Videos -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/axial_view3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 3: Axial View</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/coronal_view3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 3: Coronal View</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <video controls class="card-img-top">
+              <source src="assets/videos/sagittal_view3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <p class="card-text text-center">Case 3: Sagittal View</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- BibTeX Section -->
-        <section id="citation" class="my-5">
-            <h2>Citation</h2>
-            <textarea readonly class="form-control">
+    <!-- Acknowledgements Section -->
+    <section id="acknowledgements" class="my-5">
+      <h2>Acknowledgements</h2>
+      <p>
+        We would like to express our gratitude to the SPINAI research team and our collaborating institutions for their support and contributions to this study.
+      </p>
+    </section>
+
+    <!-- BibTeX Section -->
+    <section id="citation" class="my-5">
+      <h2>Citation</h2>
+      <textarea readonly class="form-control">
 @article{lee2024ctreconstruction,
     title={High Resolution CT Images Reconstruction From Two X-ray Images and Application to Spine X-rays},
     author={Lee, Junsu and Choi, Won Chang and others},
     journal={arXiv preprint arXiv:2401.12345},
     year={2024}
 }
-            </textarea>
-        </section>
+      </textarea>
+    </section>
 
-        <!-- Footer -->
-        <footer class="text-center my-4">
-            <p>&copy; 2024 SPINAI. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="text-center my-4">
+      <p>&copy; 2024 SPINAI. All rights reserved.</p>
+    </footer>
+  </div>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
