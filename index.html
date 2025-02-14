@@ -38,12 +38,12 @@
       text-align: center;
       margin: 0.5rem 0;
     }
-    /* XR2CT 버튼 커스텀 스타일 */
+    /* XR2CT 버튼 커스텀 스타일 - 모서리를 더욱 둥글게 수정 */
     .xr2ct-btn {
       background-color: #2c2c2c; /* 약간 회색빛 도는 검은색 */
       color: #fff;             /* 흰색 글자 */
       border: none;
-      border-radius: 8px;      /* 둥근 모서리 */
+      border-radius: 16px;      /* 둥근 모서리 (이전 8px에서 수정) */
       padding: 0.5rem 1rem;     /* 적절한 크기 */
       text-decoration: none;
       font-size: 1rem;
@@ -53,6 +53,19 @@
     .xr2ct-btn:hover {
       background-color: #3a3a3a;
     }
+    /* 제목의 CT Reconstruction 텍스트를 한 줄에 유지 */
+    .title-ct {
+      white-space: nowrap;
+    }
+    /* Subtitle 스타일 개선 */
+    .subtitle {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #555;
+      letter-spacing: 0.5px;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 
@@ -60,16 +73,21 @@
   <div class="container-lg" id="main">
     <!-- Header Section -->
     <header class="text-center my-5">
-      <h1 class="display-4">XR2CT: High-Resolution Spinal CT Reconstruction</h1>
-      <p class="subtitle"><em>from Orthogonal X-rays with Style Transfer</em></p>
+      <h1 class="display-4">
+        XR2CT: High-Resolution Spinal <span class="title-ct">CT Reconstruction</span>
+      </h1>
+      <p class="subtitle">
+        from Orthogonal X-rays with Style Transfer
+      </p>
       <div class="authors my-3">
         <p class="author-list">
           JUNSU LEE<sup>1,2</sup>, HYUNJAE KIM<sup>1,3,9</sup>, WON CHANG CHOI<sup>1,2</sup>, HYUN JI JUNG<sup>1,5</sup>, DAEHAN KANG<sup>1,6</sup>, HYUNDONG SUNG<sup>1,2</sup>, GUNYUL KIM<sup>1,6</sup>, YEJE LIM<sup>1,7</sup>, SANG KYEONG LEE<sup>1,8</sup>, JIHO KANG<sup>1</sup>, TAE-SHIN KIM<sup>1,4</sup>
+        </p>
         <p class="affiliations text-muted">
           <a href="http://xr2ct.com" target="_blank" class="xr2ct-btn">XR2CT Site</a>
           <br><br>
           <small>
-            1. SPINAI, 421, Gwahaksandan-ro, Gangseo-gu, Busan, Republic of Korea (<a href="http://xr2ct.com" target="_blank">XR2CT Site</a>)<br>
+            1. SPINAI, 421, Gwahaksandan-ro, Gangseo-gu, Busan, Republic of Korea<br>
             2. Department of Computer Engineering, Sogang University, 35, Baekbeom-ro, Mapo-gu, Seoul, Republic of Korea<br>
             3. Samsung Electronics Co., Ltd., Suwon, South Korea<br>
             4. Department of Neurosurgery, Sinchon Yonsei Hospital, 110, Seogang-ro, Mapo-gu, Seoul, Republic of Korea<br>
@@ -290,7 +308,7 @@
     <section id="acknowledgements" class="my-5">
       <h2>Acknowledgements</h2>
       <p>
-        We would like to express our gratitude to the SPINAI research team and our collaborating institutions for their support and contributions to this study.
+        This research was conducted using the computational resources and datasets from the SPINAI Research Center.
       </p>
     </section>
 
@@ -298,18 +316,18 @@
     <section id="citation" class="my-5">
       <h2>Citation</h2>
       <textarea readonly class="form-control">
-@article{lee2024ctreconstruction,
-    title={High Resolution CT Images Reconstruction From Two X-ray Images and Application to Spine X-rays},
-    author={Lee, Junsu and Choi, Won Chang and others},
-    journal={arXiv preprint arXiv:2401.12345},
-    year={2024}
+@article{lee2025ctreconstruction,
+    title={XR2CT: High-Resolution Spinal CT Reconstruction from Orthogonal X-rays with Style Transfer},
+    author={Lee, Junsu and Kim, Hyun Jae and others},
+    journal={arXiv preprint arXiv:2501.12345},
+    year={2025}
 }
       </textarea>
     </section>
 
     <!-- Footer -->
     <footer class="text-center my-4">
-      <p>&copy; 2024 SPINAI. All rights reserved.</p>
+      <p>&copy; 2025 SPINAI. All rights reserved.</p>
     </footer>
   </div>
 
