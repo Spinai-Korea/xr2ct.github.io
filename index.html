@@ -14,10 +14,16 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/style.css" />
   <style>
-    /* X‑ray 이미지 512x512 컨테이너 및 내부 이미지 리사이즈 & 검은색 패딩 적용 */
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* X‑ray 이미지 컨테이너: 데스크탑에서는 512x512, 모바일에서는 화면폭에 맞게 조정 */
     .xray-wrapper {
       width: 512px;
       height: 512px;
+      max-width: 100%;
+      max-height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -25,52 +31,92 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     .xray-wrapper img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
       display: block;
     }
-    /* 카드 텍스트를 좀 더 모던하게 꾸며 UI/UX 개선 (글자색은 그대로 유지) */
+
+    /* 카드 텍스트 모던하게 */
     .card-text {
-      font-family: 'Roboto', sans-serif;
       font-size: 1.2rem;
       font-weight: 500;
       text-align: center;
       margin: 0.5rem 0;
     }
-    /* XR2CT 버튼 커스텀 스타일 - 모서리를 더욱 둥글게 수정 */
+
+    /* XR2CT 버튼 커스텀 스타일 */
     .xr2ct-btn {
-      background-color: #2c2c2c; /* 약간 회색빛 도는 검은색 */
-      color: #fff;             /* 흰색 글자 */
+      background-color: #2c2c2c;
+      color: #fff;
       border: none;
-      border-radius: 16px;      /* 둥근 모서리 (이전 8px에서 수정) */
-      padding: 0.5rem 1rem;     /* 적절한 크기 */
+      border-radius: 16px;
+      padding: 0.5rem 1rem;
       text-decoration: none;
       font-size: 1rem;
       display: inline-block;
       transition: background-color 0.3s;
     }
+
     .xr2ct-btn:hover {
       background-color: #3a3a3a;
     }
+
     /* 제목의 CT Reconstruction 텍스트를 한 줄에 유지 */
     .title-ct {
       white-space: nowrap;
     }
+
     /* Subtitle 스타일 개선 */
     .subtitle {
-      font-family: 'Roboto', sans-serif;
       font-size: 1.5rem;
       font-style: italic;
       color: #555;
       letter-spacing: 0.5px;
       margin-top: 0.5rem;
     }
+
+    /* 반응형 비디오: 데스크탑/모바일 모두에서 적절한 크기로 */
+    .video-container video,
+    .card video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* 미디어 쿼리: 모바일 환경에서 여백, 글꼴, 이미지 크기 조정 */
+    @media (max-width: 576px) {
+      header h1.display-4 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .card-text {
+        font-size: 1rem;
+      }
+
+      .xr2ct-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      /* xray-wrapper: 화면폭의 90%로 조정 */
+      .xray-wrapper {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 1/1;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="container-lg" id="main">
+  <div class="container-lg px-3" id="main">
     <!-- Header Section -->
     <header class="text-center my-5">
       <h1 class="display-4">
@@ -115,14 +161,14 @@
 
     <!-- Revised CT Reconstruction Media Section -->
     <section id="videos" class="my-5">
-      <h2>CT Reconstruction Media</h2>
+      <h2 class="mb-4">CT Reconstruction Media</h2>
 
       <!-- Case 1 -->
       <h3 class="mb-3">Case 1</h3>
       <!-- Row for PA and LAT X-ray Images -->
       <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <div class="xray-wrapper">
               <img src="assets/images/case1_pa_xray.jpg" alt="Case 1: PA Xray" />
             </div>
@@ -132,7 +178,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <div class="xray-wrapper">
               <img src="assets/images/case1_lat_xray.jpg" alt="Case 1: LAT Xray" />
             </div>
@@ -145,7 +191,7 @@
       <!-- Row for Videos -->
       <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/axial_view1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -156,7 +202,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/coronal_view1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -167,7 +213,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/sagittal_view1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -184,7 +230,7 @@
       <!-- Row for PA and LAT X-ray Images -->
       <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <div class="xray-wrapper">
               <img src="assets/images/case2_pa_xray.png" alt="Case 2: PA Xray" />
             </div>
@@ -194,7 +240,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <div class="xray-wrapper">
               <img src="assets/images/case2_lat_xray.png" alt="Case 2: LAT Xray" />
             </div>
@@ -207,7 +253,7 @@
       <!-- Row for Videos -->
       <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/axial_view2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -218,7 +264,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/coronal_view2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -229,7 +275,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/sagittal_view2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -246,7 +292,7 @@
       <!-- Row for PA and LAT X-ray Images -->
       <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <div class="xray-wrapper">
               <img src="assets/images/case3_pa_xray.png" alt="Case 3: PA Xray" />
             </div>
@@ -256,7 +302,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <div class="xray-wrapper">
               <img src="assets/images/case3_lat_xray.png" alt="Case 3: LAT Xray" />
             </div>
@@ -269,7 +315,7 @@
       <!-- Row for Videos -->
       <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/axial_view3.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -280,7 +326,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/coronal_view3.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -291,7 +337,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <video autoplay loop muted playsinline class="card-img-top">
               <source src="assets/videos/sagittal_view3.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -315,14 +361,12 @@
     <!-- BibTeX Section -->
     <section id="citation" class="my-5">
       <h2>Citation</h2>
-      <textarea readonly class="form-control">
-@article{lee2025ctreconstruction,
+      <textarea readonly class="form-control" rows="6">@article{lee2025ctreconstruction,
     title={XR2CT: High-Resolution Spinal CT Reconstruction from Orthogonal X-rays with Style Transfer},
     author={Lee, Junsu and Kim, Hyun Jae and others},
     journal={arXiv preprint arXiv:2501.12345},
     year={2025}
-}
-      </textarea>
+}</textarea>
     </section>
 
     <!-- Footer -->
