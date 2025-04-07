@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,144 +10,15 @@
   <meta property="og:image" content="assets/images/cover.jpg" />
   <title>XR2CT: High-Resolution Spinal CT Reconstruction</title>
   <!-- 구글 폰트 (Roboto) 추가 -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <!-- Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <!-- 기존 style.css가 있다면, 해당 파일에서 아래 내용으로 교체하거나 추가하세요. -->
+  <link rel="stylesheet" href="assets/style.css" />
   <style>
-    /* ------------------------------
-       색상/폰트/기본 설정
-       ------------------------------ */
-    :root {
-      --primary-color: #212529;      /* 전체 텍스트 색 (기본 검정보다 살짝 부드러운 톤) */
-      --secondary-color: #555;       /* 보조 텍스트 색 */
-      --highlight-bg: #f8f9fa;       /* 가벼운 강조 영역 배경색 */
-      --heading-color: #2c2c2c;      /* 큰 제목 등에서 사용하는 색상 */
-      --accent-color: #3a3a3a;       /* 버튼 hover 같은 곳에 쓰이는 색상 */
-      --card-bg: #ffffff;
-      --card-shadow: rgba(0, 0, 0, 0.1);
-      --line-height-body: 1.65;
-      --font-main: 'Roboto', sans-serif;
-    }
-
     body {
-      font-family: var(--font-main);
-      font-size: 16px;
-      line-height: var(--line-height-body);
-      color: var(--primary-color);
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
+      font-family: 'Roboto', sans-serif;
     }
 
-    a, a:hover, a:focus, a:active {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      color: var(--heading-color);
-      margin-bottom: 0.8rem;
-    }
-
-    p {
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    /* ------------------------------
-       컨테이너 및 섹션(섹션 간 여백 강화)
-       ------------------------------ */
-    #main {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-
-    section {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      border-top: 1px solid #ddd;
-      margin-top: 2rem;
-    }
-    section:first-of-type {
-      border-top: none;
-      margin-top: 0;
-      padding-top: 0;
-    }
-
-    /* ------------------------------
-       헤더 & 타이틀
-       ------------------------------ */
-    header {
-      margin-bottom: 2rem;
-    }
-    header h1.display-4 {
-      font-weight: 700;
-      font-size: 2.5rem;
-      letter-spacing: -0.5px;
-    }
-    .title-ct {
-      white-space: nowrap; /* 한 줄 고정 */
-      color: #007bff;      /* 살짝 색으로 강조(원하는 색상으로 조정 가능) */
-    }
-    .subtitle {
-      font-size: 1.25rem;
-      font-weight: 300;
-      color: var(--secondary-color);
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* ------------------------------
-       XR2CT 설명(가독성 및 강조효과)
-       ------------------------------ */
-    .xr2ct-description {
-      background-color: var(--highlight-bg);
-      border-left: 4px solid #007bff;
-      padding: 1.5rem;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      border-radius: 4px;
-    }
-    .xr2ct-description em {
-      font-style: italic;
-      color: #d63384; /* 강조 색상(원하시는 색으로 조정 가능) */
-    }
-    .xr2ct-description strong {
-      font-weight: 700;
-    }
-
-    /* ------------------------------
-       저자, 소속, 버튼 스타일
-       ------------------------------ */
-    .authors .author-list {
-      font-weight: 500;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .affiliations {
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-
-    .xr2ct-btn {
-      background-color: var(--accent-color);
-      color: #fff;
-      border: none;
-      border-radius: 16px;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-    .xr2ct-btn:hover {
-      background-color: #4b4b4b;
-    }
-
-    /* ------------------------------
-       X-ray 이미지 컨테이너(512x512)
-       ------------------------------ */
+    /* X‑ray 이미지 컨테이너: 데스크탑에서는 512x512, 모바일에서는 화면폭에 맞게 조정 */
     .xray-wrapper {
       width: 512px;
       height: 512px;
@@ -155,93 +27,90 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #000;
+      background-color: #000; /* 검은색 패딩 영역 */
       margin-left: auto;
       margin-right: auto;
-      border-radius: 4px;
-      overflow: hidden; /* 모서리 자르기 */
     }
+
     .xray-wrapper img {
+      /* 컨테이너(512x512)를 꽉 채우되, 원본 비율 유지 + 부족한 부분 패딩 */
       width: 100%;
       height: 100%;
       object-fit: contain;
       display: block;
     }
 
-    /* ------------------------------
-       카드 및 비디오 스타일
-       ------------------------------ */
-    .card {
-      background-color: var(--card-bg);
-      box-shadow: 0 2px 8px var(--card-shadow);
-      border: none;
-      border-radius: 8px;
-    }
-    .card video {
-      border-radius: 8px 8px 0 0; /* 상단 모서리만 둥글게 */
-    }
-    .card-body {
-      padding: 1rem;
-    }
+    /* 카드 텍스트 모던하게 */
     .card-text {
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 500;
       text-align: center;
       margin: 0.5rem 0;
     }
 
-    /* ------------------------------
-       동영상 컨테이너
-       ------------------------------ */
-    .video-container {
-      margin-bottom: 1.5rem;
+    /* XR2CT 버튼 커스텀 스타일 */
+    .xr2ct-btn {
+      background-color: #2c2c2c;
+      color: #fff;
+      border: none;
+      border-radius: 16px;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-block;
+      transition: background-color 0.3s;
     }
-    .video-container h2 {
-      margin-bottom: 1rem;
-      font-weight: 600;
+
+    .xr2ct-btn:hover {
+      background-color: #3a3a3a;
     }
-    .video-container video {
+
+    /* 제목의 CT Reconstruction 텍스트를 한 줄에 유지 */
+    .title-ct {
+      white-space: nowrap;
+    }
+
+    /* Subtitle 스타일 개선 */
+    .subtitle {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #555;
+      letter-spacing: 0.5px;
+      margin-top: 0.5rem;
+    }
+
+    /* 반응형 비디오: 데스크탑/모바일 모두에서 적절한 크기로 */
+    .video-container video,
+    .card video {
       width: 100%;
       height: auto;
       border-radius: 8px;
     }
 
-    /* ------------------------------
-       인용구(BibTeX) 섹션
-       ------------------------------ */
-    #citation textarea {
-      font-size: 0.9rem;
-      font-family: monospace;
-      line-height: 1.4;
-      background-color: #fefefe;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    /* ------------------------------
-       반응형(모바일) 대응
-       ------------------------------ */
+    /* 미디어 쿼리: 모바일 환경에서 여백, 글꼴, 이미지 크기 조정 */
     @media (max-width: 576px) {
       header h1.display-4 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
+
       .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .card-text {
         font-size: 1rem;
       }
-      .card-text {
-        font-size: 0.95rem;
-      }
+
       .xr2ct-btn {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         padding: 0.4rem 0.8rem;
       }
+
+      /* xray-wrapper: 화면폭의 90%로 조정 */
       .xray-wrapper {
         width: 90%;
         height: auto;
         aspect-ratio: 1/1;
-      }
-      .xr2ct-description {
-        font-size: 1rem;
-        padding: 1rem;
       }
     }
   </style>
@@ -250,12 +119,13 @@
 <body>
   <div class="container-lg px-3" id="main">
     <!-- Header Section -->
-    <header class="text-center">
+    <header class="text-center my-5">
       <h1 class="display-4">
         XR2CT: High-Resolution Spinal <span class="title-ct">CT Reconstruction</span>
       </h1>
-      <p class="subtitle">from Orthogonal X-rays with Style Transfer</p>
-
+      <p class="subtitle">
+        from Orthogonal X-rays with Style Transfer
+      </p>
       <div class="authors my-3">
         <p class="author-list">
           JUNSU LEE<sup>1,2</sup>, HYUNJAE KIM<sup>3</sup>, WON CHANG CHOI<sup>1,2</sup>, HYUN JI JUNG<sup>1,5</sup>, DAEHAN KANG<sup>1,6</sup>, HYUNDONG SUNG<sup>9</sup>, GUNYUL KIM<sup>1,6</sup>, YEJE LIM<sup>1,7</sup>, SANG KYEONG LEE<sup>1,8</sup>, JIHO KANG<sup>1</sup>, TAE-SHIN KIM<sup>1,4</sup>
@@ -265,32 +135,35 @@
           <br><br>
           <small>
             1. SPINAI, Busan, Republic of Korea<br>
-            2. Department of Computer Engineering, Sogang University, Seoul, Republic of Korea<br>
+            2. Department of Computer Engineering, Sogang University, 35, Baekbeom-ro, Mapo-gu, Seoul, Republic of Korea<br>
             3. Samsung Electronics Co., Ltd., Suwon, South Korea<br>
-            4. Department of Neurosurgery, Sinchon Yonsei Hospital, Seoul, Republic of Korea<br>
-            5. College of Medicine, Pusan National University, Yangsan-si, Gyeongsangnam-do, Republic of Korea<br>
-            6. Department of Software Engineering, Chung-Ang University, Seoul, Republic of Korea<br>
-            7. College of Medicine, Korea University, Seoul, Republic of Korea<br>
-            8. College of Medicine, Konyang University, Daejeon, Republic of Korea<br>
+            4. Department of Neurosurgery, Sinchon Yonsei Hospital, 110, Seogang-ro, Mapo-gu, Seoul, Republic of Korea<br>
+            5. College of Medicine, Pusan National University, 49, Busandaehak-ro, Mulgeum-eup, Yangsan-si, Gyeongsangnam-do, Republic of Korea<br>
+            6. Department of Software Engineering, Chung-Ang University, 84, Heukseok-ro, Dongjak-gu, Seoul, Republic of Korea<br>
+            7. College of Medicine, Korea University, 73, Goryeodae-ro, Seongbuk-gu, Seoul, Republic of Korea<br>
+            8. College of Medicine, Konyang University, 158, Gwanjeodong-ro, Seo-gu, Daejeon, Republic of Korea<br>
             9. Toss, Seoul, Republic of Korea<br>
           </small>
         </p>
       </div>
-
-      <!-- XR2CT 설명 텍스트를 강조영역(xr2ct-description)에 담아 한눈에 들어오도록 구성 -->
-      <div class="xr2ct-description mx-auto">
-        XR2CT는 단 두 장의 정면(X-ray)과 측면(X-ray) 영상을 이용하여 
-        <strong>고해상도(256×256)</strong> 스파인 CT 영상을 실시간에 가깝게 재구성하는 최첨단 2D-to-3D 모델입니다.
-        <br><br>
-        <em>스타일 변환(style transfer)</em> 기법을 적용하여 다양한 임상 X-ray를 표준화된 합성 데이터와 자동으로 매칭하고,
-        <em>EfficientNetV2 기반 인코더</em>를 활용해 미세한 척추 구조까지 복원합니다. 
-        이를 통해 방사선 노출은 크게 줄이는 동시에, 뚜렷한 해부학적 세부 정보가 필요한 
-        <strong>정확한 신경외과 수술</strong>을 지원합니다.
+      <!-- 소개 문구 카드 영역 -->
+      <div class="card mx-auto border-0 shadow" style="max-width: 800px;">
+        <div class="card-body p-4">
+          <p class="lead mb-0">
+            XR2CT is an advanced 2D-to-3D spinal CT reconstruction framework that leverages only two orthogonal X-ray inputs 
+            to generate high-resolution (<strong>256×256</strong>) CT volumes in near–real-time. 
+            By combining <em>style transfer</em> to harmonize diverse clinical X-rays with standardized synthetic data 
+            and an <em>EfficientNetV2-based encoder</em>, XR2CT accurately recovers subtle spinal anatomy 
+            while substantially reducing radiation exposure. This innovation provides high-fidelity reconstructions 
+            that support precise neurosurgical interventions, offering a promising new path toward safer, faster, 
+            and more reliable spinal imaging.
+          </p>
+        </div>
       </div>
     </header>
 
     <!-- Representative CT Reconstruction Video -->
-    <section id="rep-video">
+    <section id="rep-video" class="my-5">
       <div class="video-container text-center">
         <h2>CT Reconstruction Video</h2>
         <video autoplay loop muted playsinline class="rounded shadow">
@@ -301,13 +174,14 @@
       </div>
     </section>
 
-    <!-- CT Reconstruction Media Section -->
-    <section id="videos">
+    <!-- Revised CT Reconstruction Media Section -->
+    <section id="videos" class="my-5">
       <h2 class="mb-4">CT Reconstruction Media</h2>
 
       <!-- Case 1 -->
       <h3 class="mb-3">Case 1</h3>
-      <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
+      <!-- Row for PA and LAT X-ray Images -->
+     <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
         <div class="col">
           <div class="card h-100 shadow-sm">
             <div class="xray-wrapper">
@@ -329,6 +203,7 @@
           </div>
         </div>
       </div>
+      <!-- Row for Videos -->
       <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <div class="col">
           <div class="card h-100 shadow-sm">
@@ -367,6 +242,7 @@
 
       <!-- Case 2 -->
       <h3 class="mb-3">Case 2</h3>
+      <!-- Row for PA and LAT X-ray Images -->
       <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
         <div class="col">
           <div class="card h-100 shadow-sm">
@@ -389,6 +265,7 @@
           </div>
         </div>
       </div>
+      <!-- Row for Videos -->
       <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <div class="col">
           <div class="card h-100 shadow-sm">
@@ -427,6 +304,7 @@
 
       <!-- Case 3 -->
       <h3 class="mb-3">Case 3</h3>
+      <!-- Row for PA and LAT X-ray Images -->
       <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mb-4">
         <div class="col">
           <div class="card h-100 shadow-sm">
@@ -449,6 +327,7 @@
           </div>
         </div>
       </div>
+      <!-- Row for Videos -->
       <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <div class="col">
           <div class="card h-100 shadow-sm">
@@ -487,7 +366,7 @@
     </section>
 
     <!-- Acknowledgements Section -->
-    <section id="acknowledgements">
+    <section id="acknowledgements" class="my-5">
       <h2>Acknowledgements</h2>
       <p>
         This research was conducted using the computational resources and datasets from the SPINAI Research Center.
@@ -495,17 +374,17 @@
     </section>
 
     <!-- BibTeX Section -->
-    <section id="citation">
+    <section id="citation" class="my-5">
       <h2>Citation</h2>
       <textarea readonly class="form-control" rows="6">@article{lee2025ctreconstruction,
-  title={XR2CT: High-Resolution Spinal CT Reconstruction from Orthogonal X-rays with Style Transfer},
-  author={Lee, Junsu and Kim, Hyun Jae and others},
-  year={2025}
+    title={XR2CT: High-Resolution Spinal CT Reconstruction from Orthogonal X-rays with Style Transfer},
+    author={Lee, Junsu and Kim, Hyun Jae and others},
+    year={2025}
 }</textarea>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center mt-4">
+    <footer class="text-center my-4">
       <p>&copy; 2025 SPINAI. All rights reserved.</p>
     </footer>
   </div>
@@ -513,4 +392,5 @@
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
