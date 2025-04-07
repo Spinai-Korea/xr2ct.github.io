@@ -113,6 +113,25 @@
         aspect-ratio: 1/1;
       }
     }
+    /* 소개 카드 고급 스타일 */
+    .intro-card {
+      max-width: 800px;
+      background-color: #f7f7f7;  /* 카드 배경색 (밝은 회색) */
+      border-radius: 8px;         /* 모서리 라운드 */
+      padding: 2rem;              /* 카드 내부 여백 늘림 */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 은은한 그림자 효과 */
+    }
+    
+    .intro-card .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .intro-card .lead {
+      font-size: 1.1rem;
+      line-height: 1.75;
+    }
   </style>
 </head>
 
@@ -147,16 +166,19 @@
         </p>
       </div>
       <!-- 소개 문구 카드 영역 -->
-      <div class="card mx-auto border-0 shadow" style="max-width: 800px;">
-        <div class="card-body p-4">
-          <p class="lead mb-0">
+      <div class="card intro-card mx-auto border-0">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Why XR2CT?</h2>
+          <p class="lead mb-3">
             XR2CT is an advanced 2D-to-3D spinal CT reconstruction framework that leverages only two orthogonal X-ray inputs 
             to generate high-resolution (<strong>256×256</strong>) CT volumes in near–real-time. 
             By combining <em>style transfer</em> to harmonize diverse clinical X-rays with standardized synthetic data 
             and an <em>EfficientNetV2-based encoder</em>, XR2CT accurately recovers subtle spinal anatomy 
-            while substantially reducing radiation exposure. This innovation provides high-fidelity reconstructions 
-            that support precise neurosurgical interventions, offering a promising new path toward safer, faster, 
-            and more reliable spinal imaging.
+            while substantially reducing radiation exposure.
+          </p>
+          <p class="lead mb-0">
+            This innovation provides high-fidelity reconstructions that support precise neurosurgical interventions, 
+            offering a promising new path toward safer, faster, and more reliable spinal imaging.
           </p>
         </div>
       </div>
