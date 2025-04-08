@@ -166,21 +166,48 @@
       </div>
       <!-- 소개 문구 카드 영역 -->
       <div class="card intro-card mx-auto border-0">
-        <div class="card-body">
-          <h2 class="card-title text-center mb-4">Abstract</h2>
-          <p class="lead mb-3">
-            XR2CT is an advanced 2D-to-3D spinal CT reconstruction framework that leverages only two orthogonal X-ray inputs 
-            to generate high-resolution (<strong>256×256</strong>) CT volumes in near–real-time. 
-            By combining <em>style transfer</em> to harmonize diverse clinical X-rays with standardized synthetic data 
-            and an <em>EfficientNetV2-based encoder</em>, XR2CT accurately recovers subtle spinal anatomy 
-            while substantially reducing radiation exposure.
-          </p>
-          <p class="lead mb-0">
-            This innovation provides high-fidelity reconstructions that support precise neurosurgical interventions, 
-            offering a promising new path toward safer, faster, and more reliable spinal imaging.
-          </p>
-        </div>
-      </div>
+    <div class="card-body">
+      <p class="lead mb-3">
+        XR2CT is a deep learning–based system designed to reconstruct 
+        high-resolution, three-dimensional (3D) spinal CT volumes from 
+        only two orthogonal X-ray images. By leveraging style transfer 
+        and advanced encoder-decoder architectures, XR2CT addresses 
+        the inherent trade-off between radiation exposure and 
+        diagnostic quality, offering a cost-effective, near–real-time 
+        alternative to conventional CT scans.
+      </p>
+
+      <h2 class="card-title text-center mb-4">Main Objectives of XR2CT</h2>
+
+      <h4>Reduced Radiation Exposure</h4>
+      <p>
+        By requiring only two orthogonal X-ray views instead of a full CT scan, 
+        XR2CT significantly lowers patient radiation dosage without 
+        compromising diagnostic utility.
+      </p>
+
+      <h4>Enhanced Neurosurgical Planning</h4>
+      <p>
+        The high-resolution 3D reconstructions enable surgeons to visualize 
+        spinal anatomy, including hardware and pedicle cortical outlines, 
+        for improved accuracy in procedures such as pedicle screw placement.
+      </p>
+
+      <h4>Rapid, Near–Real-Time 3D Reconstruction</h4>
+      <p>
+        The XR2CT pipeline—inclusive of style transfer and inference—operates 
+        in well under three minutes on standard high-performance GPUs, 
+        fitting seamlessly into clinical workflows.
+      </p>
+
+      <h4>Robust Performance Across Institutions</h4>
+      <p>
+        Style transfer harmonizes diverse clinical X-rays with standardized 
+        synthetic X-rays, ensuring consistent reconstruction fidelity 
+        despite variations in X-ray equipment and imaging protocols.
+      </p>
+    </div>
+  </div>
     </header>
 
     <!-- Representative CT Reconstruction Video -->
@@ -387,10 +414,10 @@
     </section>
 
     <!-- Acknowledgements Section -->
-    <section id="acknowledgements" class="my-5">
-      <h2>Acknowledgements</h2>
+    <section id="metrics" class="my-5">
+      <h2>Metrics</h2>
       <p>
-        This research was conducted using the computational resources and datasets from the SPINAI Research Center.
+        
       </p>
     </section>
 
