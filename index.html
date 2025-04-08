@@ -177,81 +177,92 @@
         alternative to conventional CT scans.
       </p>
       <div class="xr2ct-description">
-  <h2 class="text-center mb-4">XR2CT Main Objectives and Key Features</h2>
+            <h2 class="mb-4">XR2CT Main Objectives and Key Features</h2>
 
-  <!-- 1. Reduced Radiation Exposure -->
-  <section>
-    <h3>1. Reduced Radiation Exposure</h3>
-    <p>
-      Unlike conventional CT scans, XR2CT only requires two orthogonal X-ray views 
-      for 3D reconstruction. This significantly lowers the radiation dose for patients, 
-      making spinal procedures safer.
-    </p>
-  </section>
+            <!-- 1. Reduced Radiation Exposure -->
+            <section>
+              <h3>1. Reduced Radiation Exposure</h3>
+              <p>
+                XR2CT significantly decreases radiation exposure by requiring only two orthogonal 
+                X-ray projections to reconstruct a full 3D spinal volume. This methodological 
+                innovation obviates the need for high-dose CT scans, thereby enhancing patient 
+                safety while maintaining clinically relevant image quality.
+              </p>
+            </section>
 
-  <!-- 2. High-Resolution Output (256×256) -->
-  <section>
-    <h3>2. High-Resolution Output (256×256)</h3>
-    <p>
-      By using higher resolution (256×256) compared to common 128×128 methods, XR2CT 
-      provides more detailed reconstructions of anatomical structures, such as cortical bone 
-      boundaries and pedicle screws. This enhanced clarity is crucial for precise surgical planning.
-    </p>
-  </section>
+            <!-- 2. High-Resolution Output (256×256) -->
+            <section>
+              <h3>2. High-Resolution Output (256×256)</h3>
+              <p>
+                By employing a voxel resolution of 256×256 (substantially higher than the 
+                commonly used 128×128), XR2CT delivers enhanced detail and clarity of critical 
+                spinal landmarks. This improvement is particularly advantageous for precise 
+                surgical navigation, where subtle anatomical details—such as cortical bone 
+                thickness or pedicle screw trajectories—are crucial for successful outcomes.
+              </p>
+            </section>
 
-  <!-- 3. Domain Harmonization via Style Transfer -->
-  <section>
-    <h3>3. Domain Harmonization via Style Transfer</h3>
-    <p>
-      Clinical X-rays often vary in scale, window width/level (WW/WL), and magnification 
-      depending on equipment and protocols. XR2CT employs style transfer to align these 
-      diverse real-world X-rays with standardized synthetic data, ensuring consistent 
-      reconstruction quality across different institutions.
-    </p>
-  </section>
+            <!-- 3. Domain Harmonization via Style Transfer -->
+            <section>
+              <h3>3. Domain Harmonization via Style Transfer</h3>
+              <p>
+                Given the variability in X-ray images that arise from diverse clinical settings 
+                (e.g., differences in magnification, window width, window level, and equipment), 
+                XR2CT utilizes a sophisticated style transfer mechanism to harmonize these 
+                heterogeneous inputs. This process ensures that real-world X-rays are adapted 
+                to a standardized domain, facilitating consistent and robust 3D reconstructions 
+                across multiple institutions.
+              </p>
+            </section>
 
-  <!-- 4. Faster, More Efficient Training (EfficientNetV2) -->
-  <section>
-    <h3>4. Faster, More Efficient Training (EfficientNetV2)</h3>
-    <p>
-      XR2CT leverages EfficientNetV2, which offers up to 2.8× faster training speeds 
-      compared to ResNet-based models. This efficiency reduces development cycles 
-      and improves performance metrics such as PSNR, SSIM, and LPIPS.
-    </p>
-  </section>
+            <!-- 4. Faster, More Efficient Training (EfficientNetV2) -->
+            <section>
+              <h3>4. Faster, More Efficient Training (EfficientNetV2)</h3>
+              <p>
+                XR2CT’s use of EfficientNetV2 not only accelerates the training process—achieving 
+                up to 2.8× faster training times relative to conventional ResNet-based approaches—
+                but also improves quantitative metrics such as PSNR, SSIM, and LPIPS. This 
+                efficiency expedites model iteration and facilitates broader clinical translation.
+              </p>
+            </section>
 
-  <!-- 5. Fast Inference -->
-  <section>
-    <h3>5. Fast Inference</h3>
-    <p>
-      XR2CT reconstructs 768 CT slices in approximately 9.4 seconds on a standard GPU, 
-      making it suitable for time-sensitive scenarios like intraoperative guidance. 
-      This speed integrates seamlessly into clinical workflows without causing delays.
-    </p>
-  </section>
+            <!-- 5. Fast Inference -->
+            <section>
+              <h3>5. Fast Inference</h3>
+              <p>
+                With the capacity to reconstruct up to 768 CT slices in approximately 9.4 seconds 
+                on a standard GPU, XR2CT offers near–real-time performance in surgical or 
+                emergency contexts. This rapid inference capability ensures that clinicians 
+                can obtain detailed 3D insights without workflow delays.
+              </p>
+            </section>
 
-  <!-- 6. Enhanced Neurosurgical Planning & Outcomes -->
-  <section>
-    <h3>6. Enhanced Neurosurgical Planning & Outcomes</h3>
-    <p>
-      High-resolution 3D imaging allows surgeons to pinpoint key spinal landmarks 
-      (e.g., pedicle screw positions, cortical bone boundaries) more accurately, 
-      leading to safer and more precise procedures. Complex surgeries, such as 
-      pedicle screw placement, benefit from clearer visualization and advanced 
-      preoperative planning.
-    </p>
-  </section>
+            <!-- 6. Enhanced Neurosurgical Planning & Outcomes -->
+            <section>
+              <h3>6. Enhanced Neurosurgical Planning & Outcomes</h3>
+              <p>
+                By facilitating highly detailed 3D imaging of spinal structures, XR2CT empowers 
+                neurosurgeons to conduct more informed preoperative evaluations. The system’s 
+                capacity to visualize pedicle screws, intervertebral discs, and cortical bone 
+                boundaries in high resolution supports greater surgical precision and may 
+                contribute to improved postoperative patient outcomes.
+              </p>
+            </section>
 
-  <hr />
+            <hr />
 
-  <p>
-    Overall, XR2CT provides essential 3D information using only two X-rays, minimizing 
-    radiation exposure while delivering rapid, precise reconstructions. Its blend of 
-    high-resolution imaging, domain harmonization, efficient model training, and fast 
-    inference makes it a valuable solution for clinical and research applications.
-  </p>
-</div>
-    </div>
+            <p>
+              In summary, XR2CT combines advanced deep learning, style transfer, 
+              and high-fidelity volumetric reconstruction to provide comprehensive 
+              spinal imaging from minimal X-ray input. Its compelling balance of 
+              reduced radiation, robust image quality, and accelerated inference 
+              offers a promising avenue for clinical and research applications 
+              alike, particularly where safety, speed, and diagnostic accuracy 
+              are paramount.
+            </p>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- Representative CT Reconstruction Video -->
